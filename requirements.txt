@@ -1,0 +1,4 @@
+pandas
+pygmsh
+CoolProp
+meshio==3.0.0
