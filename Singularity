@@ -5,9 +5,6 @@ From: ubuntu:16.04
     PATH=$PATH:/opt/gmsh-4.4.0-Linux64/bin
     export PATH
 
-
-%files
-    requirements.txt /opt/
 %post
     echo "Update apt-get"
     apt-get -y update && \
@@ -19,7 +16,7 @@ From: ubuntu:16.04
   
     echo "Install python packages"
     python3 -m pip install --upgrade pip numpy
-    python3 -m pip install -r /opt/requirements.txt
+    python3 -m pip install pandas pygmsh CoolProp meshio==3.0.0
 
     echo "Extract gmsh"
     tar zxvf  /opt/gmsh-4.4.0-Linux64.tgz -C /opt
